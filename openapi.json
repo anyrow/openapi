@@ -1,5 +1,5 @@
 {
-  "_generated": "honey checksum:22132840207f",
+  "_generated": "honey checksum:b3c3ba99a832",
   "info": {
     "title": "Anyrow API",
     "version": "1.0.0"
@@ -79,6 +79,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404NotFound"
+                }
+              }
+            },
+            "description": "not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -99,6 +119,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -108,6 +148,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       },
@@ -217,22 +287,6 @@
           },
           {
             "in": "query",
-            "name": "select",
-            "required": false,
-            "schema": {
-              "description": "PostgREST-style sparse fieldset. Scalars comma-separated; relations embedded as name(fields); wildcard * selects all scalars. Docs: https://docs.postgrest.org/en/stable/references/api/resource_embedding.html",
-              "examples": [
-                "id,name,email",
-                "id,author(name)",
-                "id,author(name,posts(title))",
-                "*"
-              ],
-              "type": "string",
-              "maxLength": 500
-            }
-          },
-          {
-            "in": "query",
             "name": "limit",
             "required": false,
             "schema": {
@@ -289,6 +343,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404NotFound"
+                }
+              }
+            },
+            "description": "not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -309,6 +383,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -318,6 +412,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -393,6 +517,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404NotFoundWebhookNotFound"
+                }
+              }
+            },
+            "description": "not_found, webhook_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -413,6 +557,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -422,6 +586,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       },
@@ -505,6 +699,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404NotFoundWebhookNotFound"
+                }
+              }
+            },
+            "description": "not_found, webhook_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -525,6 +739,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -534,6 +768,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       },
@@ -607,6 +871,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404NotFoundWebhookNotFound"
+                }
+              }
+            },
+            "description": "not_found, webhook_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -627,6 +911,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -636,6 +940,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -755,22 +1089,6 @@
           },
           {
             "in": "query",
-            "name": "select",
-            "required": false,
-            "schema": {
-              "description": "PostgREST-style sparse fieldset. Scalars comma-separated; relations embedded as name(fields); wildcard * selects all scalars. Docs: https://docs.postgrest.org/en/stable/references/api/resource_embedding.html",
-              "examples": [
-                "id,name,email",
-                "id,author(name)",
-                "id,author(name,posts(title))",
-                "*"
-              ],
-              "type": "string",
-              "maxLength": 500
-            }
-          },
-          {
-            "in": "query",
             "name": "limit",
             "required": false,
             "schema": {
@@ -854,6 +1172,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404NotFoundWebhookNotFound"
+                }
+              }
+            },
+            "description": "not_found, webhook_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -874,6 +1212,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -883,6 +1241,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -958,6 +1346,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404NotFoundWebhookNotFound"
+                }
+              }
+            },
+            "description": "not_found, webhook_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -978,6 +1386,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -987,6 +1415,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -1062,6 +1520,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404NotFoundWebhookNotFound"
+                }
+              }
+            },
+            "description": "not_found, webhook_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -1082,6 +1560,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -1091,6 +1589,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -1202,22 +1730,6 @@
           },
           {
             "in": "query",
-            "name": "select",
-            "required": false,
-            "schema": {
-              "description": "PostgREST-style sparse fieldset. Scalars comma-separated; relations embedded as name(fields); wildcard * selects all scalars. Docs: https://docs.postgrest.org/en/stable/references/api/resource_embedding.html",
-              "examples": [
-                "id,name,email",
-                "id,author(name)",
-                "id,author(name,posts(title))",
-                "*"
-              ],
-              "type": "string",
-              "maxLength": 500
-            }
-          },
-          {
-            "in": "query",
             "name": "limit",
             "required": false,
             "schema": {
@@ -1290,6 +1802,16 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -1310,6 +1832,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -1319,6 +1861,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -1394,6 +1966,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404BatchNotFound"
+                }
+              }
+            },
+            "description": "batch_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -1414,6 +2006,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -1423,6 +2035,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -1488,6 +2130,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404BatchNotFound"
+                }
+              }
+            },
+            "description": "batch_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -1508,6 +2170,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -1517,6 +2199,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -1582,6 +2294,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404BatchNotFound"
+                }
+              }
+            },
+            "description": "batch_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -1602,6 +2334,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -1611,6 +2363,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -1676,6 +2458,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404BatchNotFound"
+                }
+              }
+            },
+            "description": "batch_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -1696,6 +2498,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -1705,6 +2527,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -1780,6 +2632,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetProjectsExportResponse404"
+                }
+              }
+            },
+            "description": "export_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -1800,6 +2672,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -1809,6 +2701,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -1825,6 +2747,21 @@
             "apiKey": []
           }
         ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProjectsExtractRequest"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProjectsExtractRequest"
+              }
+            }
+          },
+          "required": true
+        },
         "parameters": [
           {
             "in": "path",
@@ -1876,6 +2813,16 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -1896,6 +2843,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -1905,6 +2872,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -1921,6 +2918,21 @@
             "apiKey": []
           }
         ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProjectsExtractRequest"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProjectsExtractRequest"
+              }
+            }
+          },
+          "required": true
+        },
         "parameters": [
           {
             "in": "path",
@@ -1932,6 +2944,16 @@
           }
         ],
         "responses": {
+          "200": {
+            "content": {
+              "text/event-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProjectsExtractStreamResponse200"
+                }
+              }
+            },
+            "description": "ok"
+          },
           "400": {
             "content": {
               "application/json": {
@@ -1962,6 +2984,16 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -1982,6 +3014,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -1991,6 +3043,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -2007,6 +3089,21 @@
             "apiKey": []
           }
         ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProjectsSuggestSchemaRequest"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProjectsSuggestSchemaRequest"
+              }
+            }
+          },
+          "required": true
+        },
         "parameters": [
           {
             "in": "path",
@@ -2058,6 +3155,16 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -2078,6 +3185,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -2087,6 +3214,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -2198,22 +3355,6 @@
           },
           {
             "in": "query",
-            "name": "select",
-            "required": false,
-            "schema": {
-              "description": "PostgREST-style sparse fieldset. Scalars comma-separated; relations embedded as name(fields); wildcard * selects all scalars. Docs: https://docs.postgrest.org/en/stable/references/api/resource_embedding.html",
-              "examples": [
-                "id,name,email",
-                "id,author(name)",
-                "id,author(name,posts(title))",
-                "*"
-              ],
-              "type": "string",
-              "maxLength": 500
-            }
-          },
-          {
-            "in": "query",
             "name": "limit",
             "required": false,
             "schema": {
@@ -2270,6 +3411,16 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -2290,6 +3441,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -2299,6 +3470,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -2374,6 +3575,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404TableNotFound"
+                }
+              }
+            },
+            "description": "table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -2394,6 +3615,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -2403,6 +3644,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -2488,6 +3759,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404TableNotFound"
+                }
+              }
+            },
+            "description": "table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -2508,6 +3799,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -2517,6 +3828,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -2628,22 +3969,6 @@
           },
           {
             "in": "query",
-            "name": "select",
-            "required": false,
-            "schema": {
-              "description": "PostgREST-style sparse fieldset. Scalars comma-separated; relations embedded as name(fields); wildcard * selects all scalars. Docs: https://docs.postgrest.org/en/stable/references/api/resource_embedding.html",
-              "examples": [
-                "id,name,email",
-                "id,author(name)",
-                "id,author(name,posts(title))",
-                "*"
-              ],
-              "type": "string",
-              "maxLength": 500
-            }
-          },
-          {
-            "in": "query",
             "name": "limit",
             "required": false,
             "schema": {
@@ -2700,6 +4025,16 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -2720,6 +4055,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -2729,6 +4084,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       },
@@ -2804,6 +4189,16 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -2824,6 +4219,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -2833,6 +4248,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -2908,6 +4353,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404TableNotFound"
+                }
+              }
+            },
+            "description": "table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -2928,6 +4393,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -2937,6 +4422,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       },
@@ -3020,6 +4535,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404TableNotFound"
+                }
+              }
+            },
+            "description": "table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -3040,6 +4575,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -3049,6 +4604,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       },
@@ -3122,6 +4707,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404TableNotFound"
+                }
+              }
+            },
+            "description": "table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -3142,6 +4747,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -3151,6 +4776,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -3236,6 +4891,36 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404TableNotFound"
+                }
+              }
+            },
+            "description": "table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err409OptimisticLockConflict"
+                }
+              }
+            },
+            "description": "optimistic_lock_conflict"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -3256,6 +4941,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -3265,6 +4970,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -3350,6 +5085,36 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404ColumnNotFoundTableNotFound"
+                }
+              }
+            },
+            "description": "column_not_found, table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err409OptimisticLockConflict"
+                }
+              }
+            },
+            "description": "optimistic_lock_conflict"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -3370,6 +5135,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -3379,6 +5164,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -3472,6 +5287,36 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404ColumnNotFoundTableNotFound"
+                }
+              }
+            },
+            "description": "column_not_found, table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err409OptimisticLockConflict"
+                }
+              }
+            },
+            "description": "optimistic_lock_conflict"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -3492,6 +5337,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -3501,6 +5366,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       },
@@ -3582,6 +5477,36 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404ColumnNotFoundTableNotFound"
+                }
+              }
+            },
+            "description": "column_not_found, table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err409OptimisticLockConflict"
+                }
+              }
+            },
+            "description": "optimistic_lock_conflict"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -3602,6 +5527,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -3611,6 +5556,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -3714,6 +5689,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404ColumnNotFoundTableNotFound"
+                }
+              }
+            },
+            "description": "column_not_found, table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -3734,6 +5729,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -3743,6 +5758,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -3828,6 +5873,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404TableNotFound"
+                }
+              }
+            },
+            "description": "table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -3848,6 +5913,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -3857,6 +5942,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -3953,7 +6068,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetProjectsExportResponse200"
+                  "$ref": "#/components/schemas/ListProjectsTablesExportResponse200"
                 }
               }
             },
@@ -3989,6 +6104,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404TableNotFound"
+                }
+              }
+            },
+            "description": "table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -4009,6 +6144,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -4018,6 +6173,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -4034,6 +6219,21 @@
             "apiKey": []
           }
         ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProjectsSuggestSchemaRequest"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProjectsSuggestSchemaRequest"
+              }
+            }
+          },
+          "required": true
+        },
         "parameters": [
           {
             "in": "path",
@@ -4093,6 +6293,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404TableNotFound"
+                }
+              }
+            },
+            "description": "table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -4113,6 +6333,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -4122,6 +6362,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -4138,6 +6408,21 @@
             "apiKey": []
           }
         ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProjectsSuggestSchemaRequest"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProjectsSuggestSchemaRequest"
+              }
+            }
+          },
+          "required": true
+        },
         "parameters": [
           {
             "in": "path",
@@ -4157,6 +6442,16 @@
           }
         ],
         "responses": {
+          "200": {
+            "content": {
+              "text/event-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProjectsExtractStreamResponse200"
+                }
+              }
+            },
+            "description": "ok"
+          },
           "400": {
             "content": {
               "application/json": {
@@ -4187,6 +6482,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404TableNotFound"
+                }
+              }
+            },
+            "description": "table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -4207,6 +6522,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -4216,6 +6551,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -4301,6 +6666,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404TableNotFound"
+                }
+              }
+            },
+            "description": "table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -4321,6 +6706,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -4330,6 +6735,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -4459,6 +6894,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404TableNotFound"
+                }
+              }
+            },
+            "description": "table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -4479,6 +6934,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -4488,6 +6963,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       },
@@ -4535,7 +7040,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateProjectsTablesRowRequest"
+                  "$ref": "#/components/schemas/CreateProjectsTablesRowResponse201"
                 }
               }
             },
@@ -4571,6 +7076,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404TableNotFound"
+                }
+              }
+            },
+            "description": "table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -4591,6 +7116,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -4600,6 +7145,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -4691,6 +7266,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404TableNotFound"
+                }
+              }
+            },
+            "description": "table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -4711,6 +7306,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -4720,6 +7335,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -4805,6 +7450,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404TableNotFound"
+                }
+              }
+            },
+            "description": "table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -4825,6 +7490,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -4834,6 +7519,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -4881,7 +7596,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateProjectsTablesRowRequest"
+                  "$ref": "#/components/schemas/CreateProjectsTablesRowResponse201"
                 }
               }
             },
@@ -4917,6 +7632,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404RowNotFoundTableNotFound"
+                }
+              }
+            },
+            "description": "row_not_found, table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -4937,6 +7672,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -4946,6 +7701,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       },
@@ -5001,7 +7786,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateProjectsTablesRowRequest"
+                  "$ref": "#/components/schemas/CreateProjectsTablesRowResponse201"
                 }
               }
             },
@@ -5037,6 +7822,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404RowNotFoundTableNotFound"
+                }
+              }
+            },
+            "description": "row_not_found, table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -5057,6 +7862,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -5066,6 +7891,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       },
@@ -5147,6 +8002,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404RowNotFoundTableNotFound"
+                }
+              }
+            },
+            "description": "row_not_found, table_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -5167,6 +8042,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -5176,6 +8071,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -5243,6 +8168,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404NotFound"
+                }
+              }
+            },
+            "description": "not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -5263,6 +8208,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -5272,6 +8237,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -5447,6 +8442,26 @@
             },
             "description": "email_not_verified, forbidden"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404NotFound"
+                }
+              }
+            },
+            "description": "not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
+          },
           "413": {
             "content": {
               "application/json": {
@@ -5467,6 +8482,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -5476,6 +8511,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -5547,11 +8612,31 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Err403EmailNotVerifiedForbidden"
+                  "$ref": "#/components/schemas/Err403EmailNotVerifiedForbiddenTableTemplateForbidden"
                 }
               }
             },
-            "description": "email_not_verified, forbidden"
+            "description": "email_not_verified, forbidden, table_template_forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404NotFoundTableTemplateNotFound"
+                }
+              }
+            },
+            "description": "not_found, table_template_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
           },
           "413": {
             "content": {
@@ -5573,6 +8658,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -5582,6 +8687,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       },
@@ -5641,11 +8776,31 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Err403EmailNotVerifiedForbidden"
+                  "$ref": "#/components/schemas/Err403EmailNotVerifiedForbiddenTableTemplateForbidden"
                 }
               }
             },
-            "description": "email_not_verified, forbidden"
+            "description": "email_not_verified, forbidden, table_template_forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err404NotFoundTableTemplateNotFound"
+                }
+              }
+            },
+            "description": "not_found, table_template_not_found"
+          },
+          "408": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err408RequestTimeout"
+                }
+              }
+            },
+            "description": "request_timeout"
           },
           "413": {
             "content": {
@@ -5667,6 +8822,26 @@
             },
             "description": "unsupported_media_type"
           },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err422UnprocessableEntity"
+                }
+              }
+            },
+            "description": "unprocessable_entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err429TooManyRequests"
+                }
+              }
+            },
+            "description": "too_many_requests"
+          },
           "500": {
             "content": {
               "application/json": {
@@ -5676,6 +8851,36 @@
               }
             },
             "description": "internal_server_error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err502BadGateway"
+                }
+              }
+            },
+            "description": "bad_gateway"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err503ServiceUnavailable"
+                }
+              }
+            },
+            "description": "service_unavailable"
+          },
+          "504": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err504GatewayTimeout"
+                }
+              }
+            },
+            "description": "gateway_timeout"
           }
         }
       }
@@ -5688,6 +8893,11 @@
         "in": "header",
         "name": "Authorization",
         "type": "apiKey"
+      },
+      "jwt": {
+        "bearerFormat": "JWT",
+        "scheme": "bearer",
+        "type": "http"
       }
     },
     "schemas": {
@@ -5792,19 +9002,6 @@
               }
             ]
           },
-          "events_json": {
-            "minItems": 1,
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": [
-                "batch.complete",
-                "batch.failed",
-                "batch.partial",
-                "ping"
-              ]
-            }
-          },
           "active": {
             "type": "boolean",
             "examples": [
@@ -5834,6 +9031,19 @@
               }
             ]
           },
+          "events": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "batch.complete",
+                "batch.failed",
+                "batch.partial",
+                "ping"
+              ]
+            }
+          },
           "secret": {
             "type": "string"
           }
@@ -5846,10 +9056,10 @@
           "organization_id",
           "url",
           "secret_rotated_at",
-          "events_json",
           "active",
           "failure_count",
           "last_triggered_at",
+          "events",
           "secret"
         ],
         "additionalProperties": false
@@ -6032,6 +9242,124 @@
         ],
         "type": "object"
       },
+      "Err404NotFound": {
+        "properties": {
+          "error_key": {
+            "enum": [
+              "not_found"
+            ],
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "properties": {
+                  "error_key": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "error_key",
+                  "message",
+                  "path"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              404
+            ],
+            "type": "integer"
+          },
+          "status_key": {
+            "type": "string"
+          },
+          "success": {
+            "const": false
+          }
+        },
+        "required": [
+          "error_key",
+          "fields",
+          "message",
+          "status",
+          "status_key",
+          "success"
+        ],
+        "type": "object"
+      },
+      "Err408RequestTimeout": {
+        "properties": {
+          "error_key": {
+            "enum": [
+              "request_timeout"
+            ],
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "properties": {
+                  "error_key": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "error_key",
+                  "message",
+                  "path"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              408
+            ],
+            "type": "integer"
+          },
+          "status_key": {
+            "type": "string"
+          },
+          "success": {
+            "const": false
+          }
+        },
+        "required": [
+          "error_key",
+          "fields",
+          "message",
+          "status",
+          "status_key",
+          "success"
+        ],
+        "type": "object"
+      },
       "Err413ContentTooLarge": {
         "properties": {
           "error_key": {
@@ -6150,6 +9478,124 @@
         ],
         "type": "object"
       },
+      "Err422UnprocessableEntity": {
+        "properties": {
+          "error_key": {
+            "enum": [
+              "unprocessable_entity"
+            ],
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "properties": {
+                  "error_key": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "error_key",
+                  "message",
+                  "path"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              422
+            ],
+            "type": "integer"
+          },
+          "status_key": {
+            "type": "string"
+          },
+          "success": {
+            "const": false
+          }
+        },
+        "required": [
+          "error_key",
+          "fields",
+          "message",
+          "status",
+          "status_key",
+          "success"
+        ],
+        "type": "object"
+      },
+      "Err429TooManyRequests": {
+        "properties": {
+          "error_key": {
+            "enum": [
+              "too_many_requests"
+            ],
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "properties": {
+                  "error_key": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "error_key",
+                  "message",
+                  "path"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              429
+            ],
+            "type": "integer"
+          },
+          "status_key": {
+            "type": "string"
+          },
+          "success": {
+            "const": false
+          }
+        },
+        "required": [
+          "error_key",
+          "fields",
+          "message",
+          "status",
+          "status_key",
+          "success"
+        ],
+        "type": "object"
+      },
       "Err500InternalServerError": {
         "properties": {
           "error_key": {
@@ -6189,6 +9635,183 @@
           "status": {
             "enum": [
               500
+            ],
+            "type": "integer"
+          },
+          "status_key": {
+            "type": "string"
+          },
+          "success": {
+            "const": false
+          }
+        },
+        "required": [
+          "error_key",
+          "fields",
+          "message",
+          "status",
+          "status_key",
+          "success"
+        ],
+        "type": "object"
+      },
+      "Err502BadGateway": {
+        "properties": {
+          "error_key": {
+            "enum": [
+              "bad_gateway"
+            ],
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "properties": {
+                  "error_key": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "error_key",
+                  "message",
+                  "path"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              502
+            ],
+            "type": "integer"
+          },
+          "status_key": {
+            "type": "string"
+          },
+          "success": {
+            "const": false
+          }
+        },
+        "required": [
+          "error_key",
+          "fields",
+          "message",
+          "status",
+          "status_key",
+          "success"
+        ],
+        "type": "object"
+      },
+      "Err503ServiceUnavailable": {
+        "properties": {
+          "error_key": {
+            "enum": [
+              "service_unavailable"
+            ],
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "properties": {
+                  "error_key": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "error_key",
+                  "message",
+                  "path"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              503
+            ],
+            "type": "integer"
+          },
+          "status_key": {
+            "type": "string"
+          },
+          "success": {
+            "const": false
+          }
+        },
+        "required": [
+          "error_key",
+          "fields",
+          "message",
+          "status",
+          "status_key",
+          "success"
+        ],
+        "type": "object"
+      },
+      "Err504GatewayTimeout": {
+        "properties": {
+          "error_key": {
+            "enum": [
+              "gateway_timeout"
+            ],
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "properties": {
+                  "error_key": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "error_key",
+                  "message",
+                  "path"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              504
             ],
             "type": "integer"
           },
@@ -6318,19 +9941,6 @@
                     }
                   ]
                 },
-                "events_json": {
-                  "minItems": 1,
-                  "type": "array",
-                  "items": {
-                    "type": "string",
-                    "enum": [
-                      "batch.complete",
-                      "batch.failed",
-                      "batch.partial",
-                      "ping"
-                    ]
-                  }
-                },
                 "active": {
                   "type": "boolean",
                   "examples": [
@@ -6359,6 +9969,19 @@
                       "type": "null"
                     }
                   ]
+                },
+                "events": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "batch.complete",
+                      "batch.failed",
+                      "batch.partial",
+                      "ping"
+                    ]
+                  }
                 }
               },
               "required": [
@@ -6369,10 +9992,10 @@
                 "organization_id",
                 "url",
                 "secret_rotated_at",
-                "events_json",
                 "active",
                 "failure_count",
-                "last_triggered_at"
+                "last_triggered_at",
+                "events"
               ],
               "additionalProperties": false
             }
@@ -6457,19 +10080,6 @@
               }
             ]
           },
-          "events_json": {
-            "minItems": 1,
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": [
-                "batch.complete",
-                "batch.failed",
-                "batch.partial",
-                "ping"
-              ]
-            }
-          },
           "active": {
             "type": "boolean",
             "examples": [
@@ -6498,6 +10108,19 @@
                 "type": "null"
               }
             ]
+          },
+          "events": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "batch.complete",
+                "batch.failed",
+                "batch.partial",
+                "ping"
+              ]
+            }
           }
         },
         "required": [
@@ -6508,12 +10131,72 @@
           "organization_id",
           "url",
           "secret_rotated_at",
-          "events_json",
           "active",
           "failure_count",
-          "last_triggered_at"
+          "last_triggered_at",
+          "events"
         ],
         "additionalProperties": false
+      },
+      "Err404NotFoundWebhookNotFound": {
+        "properties": {
+          "error_key": {
+            "enum": [
+              "not_found",
+              "webhook_not_found"
+            ],
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "properties": {
+                  "error_key": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "error_key",
+                  "message",
+                  "path"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              404
+            ],
+            "type": "integer"
+          },
+          "status_key": {
+            "type": "string"
+          },
+          "success": {
+            "const": false
+          }
+        },
+        "required": [
+          "error_key",
+          "fields",
+          "message",
+          "status",
+          "status_key",
+          "success"
+        ],
+        "type": "object"
       },
       "UpdateOrganizationsWebhookRequest": {
         "type": "object",
@@ -6733,7 +10416,24 @@
                 "next_retry_at",
                 "delivered_at"
               ],
-              "additionalProperties": false
+              "additionalProperties": false,
+              "x-comb": {
+                "generated": [
+                  "id",
+                  "created_at"
+                ],
+                "identity": "id",
+                "immutable": [
+                  "id",
+                  "webhook_id",
+                  "created_at"
+                ],
+                "kind": "entity",
+                "name": "webhook_delivery",
+                "softDelete": null,
+                "tenantColumn": null,
+                "v": 1
+              }
             }
           }
         },
@@ -7163,7 +10863,27 @@
                 "duration_ms",
                 "error"
               ],
-              "additionalProperties": false
+              "additionalProperties": false,
+              "x-comb": {
+                "generated": [
+                  "id",
+                  "created_at",
+                  "updated_at"
+                ],
+                "identity": "id",
+                "immutable": [
+                  "id",
+                  "project_id",
+                  "table_id",
+                  "created_at",
+                  "updated_at"
+                ],
+                "kind": "entity",
+                "name": "batch",
+                "softDelete": null,
+                "tenantColumn": null,
+                "v": 1
+              }
             }
           }
         },
@@ -7661,7 +11381,25 @@
                 "confidence",
                 "error"
               ],
-              "additionalProperties": false
+              "additionalProperties": false,
+              "x-comb": {
+                "generated": [
+                  "id",
+                  "created_at"
+                ],
+                "identity": "id",
+                "immutable": [
+                  "id",
+                  "batch_id",
+                  "table_id",
+                  "created_at"
+                ],
+                "kind": "entity",
+                "name": "extraction",
+                "softDelete": null,
+                "tenantColumn": null,
+                "v": 1
+              }
             }
           }
         },
@@ -7688,6 +11426,65 @@
           "error"
         ],
         "additionalProperties": false
+      },
+      "Err404BatchNotFound": {
+        "properties": {
+          "error_key": {
+            "enum": [
+              "batch_not_found"
+            ],
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "properties": {
+                  "error_key": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "error_key",
+                  "message",
+                  "path"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              404
+            ],
+            "type": "integer"
+          },
+          "status_key": {
+            "type": "string"
+          },
+          "success": {
+            "const": false
+          }
+        },
+        "required": [
+          "error_key",
+          "fields",
+          "message",
+          "status",
+          "status_key",
+          "success"
+        ],
+        "type": "object"
       },
       "GetProjectsExportResponse200": {
         "type": "object",
@@ -7876,7 +11673,121 @@
           "error",
           "expires_at"
         ],
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-comb": {
+          "generated": [
+            "id",
+            "created_at",
+            "updated_at"
+          ],
+          "identity": "id",
+          "immutable": [
+            "id",
+            "project_id",
+            "table_id",
+            "created_at",
+            "updated_at"
+          ],
+          "kind": "entity",
+          "name": "data_export",
+          "softDelete": null,
+          "tenantColumn": null,
+          "v": 1
+        }
+      },
+      "GetProjectsExportResponse404": {
+        "properties": {
+          "error_key": {
+            "enum": [
+              "export_not_found"
+            ],
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "properties": {
+                  "error_key": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "error_key",
+                  "message",
+                  "path"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              404
+            ],
+            "type": "integer"
+          },
+          "status_key": {
+            "type": "string"
+          },
+          "success": {
+            "const": false
+          }
+        },
+        "required": [
+          "error_key",
+          "fields",
+          "message",
+          "status",
+          "status_key",
+          "success"
+        ],
+        "type": "object"
+      },
+      "CreateProjectsExtractRequest": {
+        "type": "object",
+        "properties": {
+          "columns": {
+            "type": "string"
+          },
+          "file": {
+            "type": "string",
+            "format": "binary",
+            "contentEncoding": "binary"
+          },
+          "instruction": {
+            "type": "string",
+            "maxLength": 1000000
+          },
+          "schema": {
+            "type": "string"
+          },
+          "strictness": {
+            "type": "string",
+            "enum": [
+              "strict",
+              "balanced",
+              "flexible"
+            ]
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 1000000
+          }
+        },
+        "required": [
+          "columns"
+        ]
       },
       "CreateProjectsExtractResponse200": {
         "type": "object",
@@ -7906,6 +11817,24 @@
           },
           "fail_count": {
             "type": "number"
+          },
+          "file_type": {
+            "oneOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "text_pdf",
+                  "scanned",
+                  "image",
+                  "text",
+                  "document",
+                  "unknown"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "files": {
             "type": "array",
@@ -7964,6 +11893,9 @@
           "success_count": {
             "type": "number"
           },
+          "table_id": {
+            "type": "string"
+          },
           "total_rows": {
             "type": "number"
           }
@@ -7975,9 +11907,27 @@
           "files",
           "status",
           "success_count",
+          "table_id",
           "total_rows"
         ],
         "additionalProperties": false
+      },
+      "CreateProjectsExtractStreamResponse200": {
+        "type": "string"
+      },
+      "CreateProjectsSuggestSchemaRequest": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "string",
+            "format": "binary",
+            "contentEncoding": "binary"
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 1000000
+          }
+        }
       },
       "CreateProjectsSuggestSchemaResponse200": {
         "type": "object",
@@ -8304,7 +12254,26 @@
                 "strictness",
                 "usage_count"
               ],
-              "additionalProperties": false
+              "additionalProperties": false,
+              "x-comb": {
+                "generated": [
+                  "id",
+                  "updated_at",
+                  "created_at"
+                ],
+                "identity": "id",
+                "immutable": [
+                  "id",
+                  "_search",
+                  "updated_at",
+                  "created_at"
+                ],
+                "kind": "entity",
+                "name": "table_template",
+                "softDelete": null,
+                "tenantColumn": null,
+                "v": 1
+              }
             }
           }
         },
@@ -8565,7 +12534,85 @@
           "strictness",
           "usage_count"
         ],
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-comb": {
+          "generated": [
+            "id",
+            "updated_at",
+            "created_at"
+          ],
+          "identity": "id",
+          "immutable": [
+            "id",
+            "_search",
+            "updated_at",
+            "created_at"
+          ],
+          "kind": "entity",
+          "name": "table_template",
+          "softDelete": null,
+          "tenantColumn": null,
+          "v": 1
+        }
+      },
+      "Err404TableNotFound": {
+        "properties": {
+          "error_key": {
+            "enum": [
+              "table_not_found"
+            ],
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "properties": {
+                  "error_key": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "error_key",
+                  "message",
+                  "path"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              404
+            ],
+            "type": "integer"
+          },
+          "status_key": {
+            "type": "string"
+          },
+          "success": {
+            "const": false
+          }
+        },
+        "required": [
+          "error_key",
+          "fields",
+          "message",
+          "status",
+          "status_key",
+          "success"
+        ],
+        "type": "object"
       },
       "CreateProjectsTableTemplatesUseRequest": {
         "type": "object",
@@ -8874,7 +12921,29 @@
           "fts_version",
           "last_used_at"
         ],
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-comb": {
+          "generated": [
+            "id",
+            "created_at",
+            "updated_at",
+            "deleted_at"
+          ],
+          "identity": "id",
+          "immutable": [
+            "id",
+            "_search",
+            "project_id",
+            "created_at",
+            "updated_at",
+            "deleted_at"
+          ],
+          "kind": "entity",
+          "name": "table",
+          "softDelete": "deleted_at",
+          "tenantColumn": null,
+          "v": 1
+        }
       },
       "ListProjectsTablesResponse200": {
         "type": "object",
@@ -9199,7 +13268,29 @@
                 "fts_version",
                 "last_used_at"
               ],
-              "additionalProperties": false
+              "additionalProperties": false,
+              "x-comb": {
+                "generated": [
+                  "id",
+                  "created_at",
+                  "updated_at",
+                  "deleted_at"
+                ],
+                "identity": "id",
+                "immutable": [
+                  "id",
+                  "_search",
+                  "project_id",
+                  "created_at",
+                  "updated_at",
+                  "deleted_at"
+                ],
+                "kind": "entity",
+                "name": "table",
+                "softDelete": "deleted_at",
+                "tenantColumn": null,
+                "v": 1
+              }
             }
           }
         },
@@ -9300,10 +13391,6 @@
                 "name"
               ]
             }
-          },
-          "default_sort": {
-            "type": "string",
-            "maxLength": 256
           },
           "insert_mode": {
             "type": "string",
@@ -9523,6 +13610,65 @@
           "name"
         ]
       },
+      "Err409OptimisticLockConflict": {
+        "properties": {
+          "error_key": {
+            "enum": [
+              "optimistic_lock_conflict"
+            ],
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "properties": {
+                  "error_key": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "error_key",
+                  "message",
+                  "path"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              409
+            ],
+            "type": "integer"
+          },
+          "status_key": {
+            "type": "string"
+          },
+          "success": {
+            "const": false
+          }
+        },
+        "required": [
+          "error_key",
+          "fields",
+          "message",
+          "status",
+          "status_key",
+          "success"
+        ],
+        "type": "object"
+      },
       "ReplaceProjectsTablesColumnRequest": {
         "type": "object",
         "properties": {
@@ -9537,6 +13683,66 @@
         "required": [
           "order"
         ]
+      },
+      "Err404ColumnNotFoundTableNotFound": {
+        "properties": {
+          "error_key": {
+            "enum": [
+              "column_not_found",
+              "table_not_found"
+            ],
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "properties": {
+                  "error_key": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "error_key",
+                  "message",
+                  "path"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              404
+            ],
+            "type": "integer"
+          },
+          "status_key": {
+            "type": "string"
+          },
+          "success": {
+            "const": false
+          }
+        },
+        "required": [
+          "error_key",
+          "fields",
+          "message",
+          "status",
+          "status_key",
+          "success"
+        ],
+        "type": "object"
       },
       "UpdateProjectsTablesColumnRequest": {
         "type": "object",
@@ -9653,6 +13859,23 @@
           "slug"
         ]
       },
+      "ListProjectsTablesExportResponse200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "const": "processing"
+          }
+        },
+        "required": [
+          "id",
+          "status"
+        ],
+        "additionalProperties": false
+      },
       "CreateProjectsTablesRestoreRequest": {
         "type": "object",
         "properties": {
@@ -9726,6 +13949,20 @@
         "additionalProperties": false
       },
       "CreateProjectsTablesRowRequest": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "vendor": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateProjectsTablesRowResponse201": {
         "type": "object",
         "propertyNames": {
           "type": "string"
@@ -9825,6 +14062,66 @@
           }
         },
         "additionalProperties": false
+      },
+      "Err404RowNotFoundTableNotFound": {
+        "properties": {
+          "error_key": {
+            "enum": [
+              "row_not_found",
+              "table_not_found"
+            ],
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "properties": {
+                  "error_key": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "error_key",
+                  "message",
+                  "path"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              404
+            ],
+            "type": "integer"
+          },
+          "status_key": {
+            "type": "string"
+          },
+          "success": {
+            "const": false
+          }
+        },
+        "required": [
+          "error_key",
+          "fields",
+          "message",
+          "status",
+          "status_key",
+          "success"
+        ],
+        "type": "object"
       },
       "CreateTableTemplateRequest": {
         "type": "object",
@@ -10170,6 +14467,127 @@
             ]
           }
         }
+      },
+      "Err403EmailNotVerifiedForbiddenTableTemplateForbidden": {
+        "properties": {
+          "error_key": {
+            "enum": [
+              "email_not_verified",
+              "forbidden",
+              "table_template_forbidden"
+            ],
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "properties": {
+                  "error_key": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "error_key",
+                  "message",
+                  "path"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              403
+            ],
+            "type": "integer"
+          },
+          "status_key": {
+            "type": "string"
+          },
+          "success": {
+            "const": false
+          }
+        },
+        "required": [
+          "error_key",
+          "fields",
+          "message",
+          "status",
+          "status_key",
+          "success"
+        ],
+        "type": "object"
+      },
+      "Err404NotFoundTableTemplateNotFound": {
+        "properties": {
+          "error_key": {
+            "enum": [
+              "not_found",
+              "table_template_not_found"
+            ],
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "properties": {
+                  "error_key": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "error_key",
+                  "message",
+                  "path"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              404
+            ],
+            "type": "integer"
+          },
+          "status_key": {
+            "type": "string"
+          },
+          "success": {
+            "const": false
+          }
+        },
+        "required": [
+          "error_key",
+          "fields",
+          "message",
+          "status",
+          "status_key",
+          "success"
+        ],
+        "type": "object"
       },
       "CreateProjectsExtractResponse200Result": {
         "type": "object",
