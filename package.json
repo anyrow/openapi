@@ -4,5 +4,8 @@
 		"type": "git",
 		"url": "git+https://github.com/anyrow/openapi.git"
 	},
+	"scripts": {
+		"turn": "repo-turn"
+	},
 	"version": "1.0.0"
 }
