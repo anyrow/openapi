@@ -16565,94 +16565,90 @@
         "type": "object",
         "properties": {
           "columns_json": {
-            "anyOf": [
-              {
-                "minItems": 1,
-                "maxItems": 100,
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "currency_code": {
+            "x-comb-text": "no U+0000 or unpaired surrogate",
+            "minItems": 1,
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "currency_code": {
+                  "type": "string",
+                  "minLength": 3,
+                  "maxLength": 3
+                },
+                "default": {},
+                "description": {
+                  "anyOf": [
+                    {
                       "type": "string",
-                      "minLength": 3,
-                      "maxLength": 3
+                      "maxLength": 256
                     },
-                    "default": {},
-                    "description": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "maxLength": 256
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "id": {
-                      "type": "string",
-                      "minLength": 1,
-                      "maxLength": 36
-                    },
-                    "instruction": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "maxLength": 512
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "name": {
-                      "type": "string",
-                      "minLength": 1,
-                      "maxLength": 64,
-                      "pattern": "^[\\w\\s.-]+$"
-                    },
-                    "options": {
-                      "maxItems": 500,
-                      "type": "array",
-                      "items": {
-                        "type": "string",
-                        "maxLength": 256
-                      }
-                    },
-                    "required": {
-                      "default": false,
-                      "type": "boolean"
-                    },
-                    "searchable": {
-                      "type": "boolean"
-                    },
-                    "type": {
-                      "default": "string",
-                      "type": "string",
-                      "enum": [
-                        "array",
-                        "boolean",
-                        "currency",
-                        "date",
-                        "email",
-                        "enum",
-                        "multi_select",
-                        "number",
-                        "string",
-                        "text",
-                        "url"
-                      ]
+                    {
+                      "type": "null"
                     }
-                  },
-                  "required": [
-                    "id",
-                    "name"
+                  ]
+                },
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 36
+                },
+                "instruction": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "maxLength": 512
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64,
+                  "pattern": "^[\\w\\s.-]+$"
+                },
+                "options": {
+                  "maxItems": 500,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "maxLength": 256
+                  }
+                },
+                "required": {
+                  "default": false,
+                  "type": "boolean"
+                },
+                "searchable": {
+                  "type": "boolean"
+                },
+                "type": {
+                  "default": "string",
+                  "type": "string",
+                  "enum": [
+                    "array",
+                    "boolean",
+                    "currency",
+                    "date",
+                    "email",
+                    "enum",
+                    "multi_select",
+                    "number",
+                    "string",
+                    "text",
+                    "url"
                   ]
                 }
-              }
-            ],
-            "x-comb-text": "no U+0000 or unpaired surrogate"
+              },
+              "required": [
+                "id",
+                "name"
+              ]
+            }
           },
           "insert_mode": {
             "type": "string",
@@ -16685,6 +16681,7 @@
           "merge_columns_json": {
             "anyOf": [
               {
+                "x-comb-text": "no U+0000 or unpaired surrogate",
                 "minItems": 1,
                 "type": "array",
                 "items": {
@@ -16851,6 +16848,7 @@
           "merge_columns_json": {
             "anyOf": [
               {
+                "x-comb-text": "no U+0000 or unpaired surrogate",
                 "minItems": 1,
                 "type": "array",
                 "items": {
@@ -19524,94 +19522,90 @@
             "x-comb-text": "no U+0000 or unpaired surrogate"
           },
           "columns_json": {
-            "anyOf": [
-              {
-                "minItems": 1,
-                "maxItems": 100,
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "currency_code": {
+            "x-comb-text": "no U+0000 or unpaired surrogate",
+            "minItems": 1,
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "currency_code": {
+                  "type": "string",
+                  "minLength": 3,
+                  "maxLength": 3
+                },
+                "default": {},
+                "description": {
+                  "anyOf": [
+                    {
                       "type": "string",
-                      "minLength": 3,
-                      "maxLength": 3
+                      "maxLength": 256
                     },
-                    "default": {},
-                    "description": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "maxLength": 256
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "id": {
-                      "type": "string",
-                      "minLength": 1,
-                      "maxLength": 36
-                    },
-                    "instruction": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "maxLength": 512
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "name": {
-                      "type": "string",
-                      "minLength": 1,
-                      "maxLength": 64,
-                      "pattern": "^[\\w\\s.-]+$"
-                    },
-                    "options": {
-                      "maxItems": 500,
-                      "type": "array",
-                      "items": {
-                        "type": "string",
-                        "maxLength": 256
-                      }
-                    },
-                    "required": {
-                      "default": false,
-                      "type": "boolean"
-                    },
-                    "searchable": {
-                      "type": "boolean"
-                    },
-                    "type": {
-                      "default": "string",
-                      "type": "string",
-                      "enum": [
-                        "array",
-                        "boolean",
-                        "currency",
-                        "date",
-                        "email",
-                        "enum",
-                        "multi_select",
-                        "number",
-                        "string",
-                        "text",
-                        "url"
-                      ]
+                    {
+                      "type": "null"
                     }
-                  },
-                  "required": [
-                    "id",
-                    "name"
+                  ]
+                },
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 36
+                },
+                "instruction": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "maxLength": 512
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64,
+                  "pattern": "^[\\w\\s.-]+$"
+                },
+                "options": {
+                  "maxItems": 500,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "maxLength": 256
+                  }
+                },
+                "required": {
+                  "default": false,
+                  "type": "boolean"
+                },
+                "searchable": {
+                  "type": "boolean"
+                },
+                "type": {
+                  "default": "string",
+                  "type": "string",
+                  "enum": [
+                    "array",
+                    "boolean",
+                    "currency",
+                    "date",
+                    "email",
+                    "enum",
+                    "multi_select",
+                    "number",
+                    "string",
+                    "text",
+                    "url"
                   ]
                 }
-              }
-            ],
-            "x-comb-text": "no U+0000 or unpaired surrogate"
+              },
+              "required": [
+                "id",
+                "name"
+              ]
+            }
           },
           "description": {
             "anyOf": [
@@ -19660,6 +19654,7 @@
           "merge_columns_json": {
             "anyOf": [
               {
+                "x-comb-text": "no U+0000 or unpaired surrogate",
                 "minItems": 1,
                 "type": "array",
                 "items": {
@@ -20029,94 +20024,90 @@
             "x-comb-text": "no U+0000 or unpaired surrogate"
           },
           "columns_json": {
-            "anyOf": [
-              {
-                "minItems": 1,
-                "maxItems": 100,
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "currency_code": {
+            "x-comb-text": "no U+0000 or unpaired surrogate",
+            "minItems": 1,
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "currency_code": {
+                  "type": "string",
+                  "minLength": 3,
+                  "maxLength": 3
+                },
+                "default": {},
+                "description": {
+                  "anyOf": [
+                    {
                       "type": "string",
-                      "minLength": 3,
-                      "maxLength": 3
+                      "maxLength": 256
                     },
-                    "default": {},
-                    "description": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "maxLength": 256
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "id": {
-                      "type": "string",
-                      "minLength": 1,
-                      "maxLength": 36
-                    },
-                    "instruction": {
-                      "anyOf": [
-                        {
-                          "type": "string",
-                          "maxLength": 512
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    },
-                    "name": {
-                      "type": "string",
-                      "minLength": 1,
-                      "maxLength": 64,
-                      "pattern": "^[\\w\\s.-]+$"
-                    },
-                    "options": {
-                      "maxItems": 500,
-                      "type": "array",
-                      "items": {
-                        "type": "string",
-                        "maxLength": 256
-                      }
-                    },
-                    "required": {
-                      "default": false,
-                      "type": "boolean"
-                    },
-                    "searchable": {
-                      "type": "boolean"
-                    },
-                    "type": {
-                      "default": "string",
-                      "type": "string",
-                      "enum": [
-                        "array",
-                        "boolean",
-                        "currency",
-                        "date",
-                        "email",
-                        "enum",
-                        "multi_select",
-                        "number",
-                        "string",
-                        "text",
-                        "url"
-                      ]
+                    {
+                      "type": "null"
                     }
-                  },
-                  "required": [
-                    "id",
-                    "name"
+                  ]
+                },
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 36
+                },
+                "instruction": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "maxLength": 512
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64,
+                  "pattern": "^[\\w\\s.-]+$"
+                },
+                "options": {
+                  "maxItems": 500,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "maxLength": 256
+                  }
+                },
+                "required": {
+                  "default": false,
+                  "type": "boolean"
+                },
+                "searchable": {
+                  "type": "boolean"
+                },
+                "type": {
+                  "default": "string",
+                  "type": "string",
+                  "enum": [
+                    "array",
+                    "boolean",
+                    "currency",
+                    "date",
+                    "email",
+                    "enum",
+                    "multi_select",
+                    "number",
+                    "string",
+                    "text",
+                    "url"
                   ]
                 }
-              }
-            ],
-            "x-comb-text": "no U+0000 or unpaired surrogate"
+              },
+              "required": [
+                "id",
+                "name"
+              ]
+            }
           },
           "description": {
             "anyOf": [
@@ -20165,6 +20156,7 @@
           "merge_columns_json": {
             "anyOf": [
               {
+                "x-comb-text": "no U+0000 or unpaired surrogate",
                 "minItems": 1,
                 "type": "array",
                 "items": {
