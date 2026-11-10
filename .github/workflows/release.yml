@@ -40,6 +40,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: gh release create "$TAG" "openapi.json" --verify-tag --title "$TAG" --notes "Release $TAG."
       - name: github serves the version
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           NAME="$(echo "$GITHUB_REPOSITORY")"
           for _ in $(seq "${LIVE_CHECK_TRIES:-60}"); do
